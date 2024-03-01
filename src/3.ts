@@ -28,7 +28,16 @@ class Wizard implements ICharacter, ISpellCaster {
     console.log(`Level up! New level is ${this.level}`);
   }
 }
+interface ICharacter {
+  name: string;
+  level: number;
+  introduce(phrase: string): void;
+  levelUp(): void;
+}
 
+interface ISpellCaster {
+  castSpell(): void;
+}
 // тестування класу
 const wizard = new Wizard('Merlin', 15);
 
